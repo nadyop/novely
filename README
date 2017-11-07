@@ -1,5 +1,15 @@
-Cara menggunakan :
-<ol>
-<li>Setelah selesai download, ekstrak ke folder web server kalian. contoh : htdocs atau /var/www/html</li>
-<li>edit file controller rajaongkir.php, dan rubah API KEY dengan punya kalian</li>
-</ol>
+# Novely
+Sebuah tugas akhir dari mata kuliah Sistem Terdistribusi 2017. Yang bersifat Restful API.
+
+## Build with 
+* CodeIgniter - Framework PHP
+* Bootstrap - HTML Design
+* RajaOngkir API
+* Twitter API
+
+## Team
+* Abdurrahman
+* Bahari Bastian L
+* Hilmawan Khibatul I
+* Mardiana
+* Nadya Prabaningrum
