@@ -1,6 +1,6 @@
 # Novely
 
-
+Toko buku online yang menjual novel-novel best seller.
 Sebuah tugas akhir dari mata kuliah Sistem Terdistribusi 2017. Yang bersifat Restful API.
 
 
