@@ -24,15 +24,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
         <li class="active"><a href="">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Profil</a></li>
+        <li><a href="#">Upload Twitter</a></li>
+        <li><a href="#">Cek Ongkir</a></li>
+        <li><a href="#">Cek Lokasi</a></li>
         <li><a href="#">Tentang Kami</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
