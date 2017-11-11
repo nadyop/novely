@@ -22,20 +22,10 @@
       <a class="navbar-brand" href="#">Cek Ongkir</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
 		<ul class="nav navbar-nav">
-        <li class="active"><a href="http://www.malasngoding.com">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Profil</a></li>
         <li><a href="#">Tentang Kami</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorial
-                        <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">Bootstrap</a></li>
-          </ul>
-        </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
