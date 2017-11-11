@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Novely</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/tether.min.css">
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/tether.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -17,10 +21,32 @@
       </button>
       <a class="navbar-brand" href="#">Cek Ongkir</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-
+		<ul class="nav navbar-nav">
+        <li class="active"><a href="http://www.malasngoding.com">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorial
+                        <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">Bootstrap</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
