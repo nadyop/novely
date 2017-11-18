@@ -1,0 +1,372 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Checkout</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500.00,700,300' rel='stylesheet' type='text/css'>
+
+		<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+		<!-- jquery-ui.min css -->
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+		<!-- meanmenu css -->
+        <link rel="stylesheet" href="css/meanmenu.min.css">
+		<!-- nivo-slider css -->
+        <link rel="stylesheet" href="lib/css/nivo-slider.css">
+		<!-- owl.carousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+		<!-- flaticon css -->
+        <link rel="stylesheet" href="css/shopick-icon.css">
+		<!-- pe-icon-7-stroke css -->
+        <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+		<!-- lightbox css -->
+        <link rel="stylesheet" href="css/lightbox.min.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="style.css">
+		<!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+		<!-- modernizr css -->
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+		<!-- HEADER-AREA START -->
+        <header class="header-area">
+			<!-- Main-Header Start -->
+			<div class="main-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2 col-sm-6 col-xs-12">
+							<div class="logo">
+								<a href="index.html"><img src="img/logo.png" alt="" /></a>
+							</div>
+						</div>
+						<div class="col-md-8 hidden-sm hidden-xs">
+							<div class="main-menu pull-right">
+								<nav>
+									<ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="index.html">best seller</a></li>
+                    <li><a href="login.html">login</a></li>
+                    <li><a href="about.html">about</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Main-Header End -->
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area hidden-md hidden-lg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="#best">best seller</a></li>
+                    <li><a href="login.html">login</a></li>
+                    <li><a href="about.html">about</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->
+		</header>
+		<!-- HEADER-AREA END -->
+
+		<!-- PAGE-CONTENT START -->
+		<section class="page-content"><br/>
+			<!-- CHECKOUT-AREA START -->
+			<div class="checkout-area margin-bottom-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="title-6 margin-bottom-50">Billing Details</h3>
+						</div>
+					</div>
+					<div class="coupon-area">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="coupon-accordion">
+									<!-- ACCORDION START -->
+									<h3>Please fill in the blank</h3>
+									<div id="checkout_coupon" class="coupon-checkout-content">
+										<div class="coupon-info">
+											<form action="#">
+												<p class="checkout-coupon">
+													<input type="text" placeholder="Coupon code" />
+													<input type="submit" value="Apply Coupon" />
+												</p>
+											</form>
+										</div>
+									</div>
+									<!-- ACCORDION END -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Checkout-Billing-details and order start -->
+					<div class="checkout-bill-order">
+						<form action="#">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="checkout-bill">
+									</div>
+									<div class="row coupon-info">
+										<div class="col-md-12">
+											<p class="form-row-first">
+												<label>Full Name [Recipient] </label>
+												<input type="text" />
+											</p>
+										</div>
+									</div>
+									<div class="row coupon-info">
+										<div class="col-md-6">
+											<p class="form-row-first">
+												<label>Email Address <span class="required">*</span></label>
+												<input type="text" />
+											</p>
+										</div>
+										<div class="col-md-6">
+											<p class="form-row-last">
+												<label>Phone  <span class="required">*</span></label>
+												<input type="text" />
+											</p>
+										</div>
+									</div>
+									<div class="row coupon-info">
+										<div class="col-md-12">
+											<p class="form-row-first">
+												<label>Address </label>
+												<input type="text" placeholder="Street address" />
+											</p>
+										</div>
+									</div>
+									<div class="row coupon-info">
+										<div class="col-md-12">
+											<p class="form-row-first">
+												<label>Town / City </label>
+												<input type="text" placeholder="United states (US)" />
+											</p>
+										</div>
+									</div>
+									<div class="row coupon-info">
+										<div class="col-md-6">
+											<p class="form-row-first">
+												<label>Sub</label>
+												<input type="text" />
+											</p>
+										</div>
+										<div class="col-md-6">
+											<p class="form-row-last">
+												<label>Zip </label>
+												<input type="text" />
+											</p>
+										</div>
+									</div>
+                  <div class="row coupon-info">
+										<div class="col-md-12">
+											<p class="form-row-first">
+												<label>Courier</label>
+												<!-- <input type="text"/> -->
+                        <select class="custom-select custom-form" placeholder="courier">
+  												<option>JNE</option>
+  												<option>TIKI</option>
+  												<option>POS</option>
+  											</select>
+											</p>
+										</div>
+									</div>
+
+									<div class="row coupon-info">
+										<div class="col-md-12">
+                      <p class="form-row">
+                        <input type="submit" value="Check" />
+                      </p>
+										</div>
+									</div>
+                </div>
+								<div class="col-md-6">
+									<div class="your-order">
+										<h3 class="title-7 margin-bottom-50">Your Order</h3>
+										<div class="your-order-table table-responsive">
+											<table>
+												<thead>
+													<tr>
+														<th class="product-name"><strong>Product</strong></th>
+														<th class="product-total"><strong>Total</strong></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="product-name">Marmut Merah Jambu	(<span>1</span>)</td>
+														<td class="product-total">Rp 49.900</td>
+													</tr>
+                          <tr>
+                            <td class="product-name"><span>JNE</span></td>
+                            <td class="product-total">Rp 18.900</td>
+                          </tr>
+													<tr>
+														<td class="product-name order-total">Order Total</td>
+														<td class="product-total order-total">$1378.00</td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="payment-method">
+												<div class="payment-accordion">
+													<!-- ACCORDION START -->
+													<h3 class="payment-accordion-toggle active">Direct Bank Transfer</h3>
+													<div class="payment-content default">
+														<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+													</div>
+													<!-- ACCORDION END -->
+
+													<!-- ACCORDION START -->
+													<h3 class="payment-accordion-toggle">PayPal</h3>
+													<div class="payment-content">
+														<p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+														<a href="#"><img src="img/bg/payment.png" alt="" /></a>
+													</div>
+													<!-- ACCORDION END -->
+												</div>
+											<div class="order-button-payment">
+												<input type="submit" value="Finish" />
+											</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- Checkout-Billing-details and order end -->
+				</div>
+			</div>
+			<!-- CHECKOUT-AREA END -->
+
+		</section>
+		<!-- PAGE-CONTENT END -->
+
+    <!-- FOOTER-AREA START -->
+		<footer class="footer-area">
+			<div class="footer-top">
+				<div class="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer footer-logo">
+									<img src="img/logo.png" alt="" />
+									<p>Menjual novel-novel best seller</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="single-footer footer-contact">
+									<h2>contact us</h2>
+									<ul>
+										<li>
+											<i class="sp-phone"></i>
+											<span>+0274 123456</span>
+										</li>
+										<li>
+											<i class="sp-email"></i>
+											<span>email@novely.com</span>
+										</li>
+										<li>
+											<i class="sp-map-marker"></i>
+											<span>Sekolah Vokasi UGM</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer footer-menu">
+									<h2>company</h2>
+									<ul>
+										<li><a href="#">Account</a></li>
+										<li><a href="#">Log in</a></li>
+										<li><a href="#">Shop</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="single-footer footer-message">
+									<form action="#">
+										<h2>Quick contact</h2>
+										<div class="footer-message-box">
+											<input type="text" placeholder="your email address" />
+											<textarea placeholder="your messege" ></textarea>
+											<input type="submit" value="submit"/>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="footer-social text-right">
+								<a href="#"><i class="sp-facebook"></i></a>
+								<a href="#"><i class="sp-twitter"></i></a>
+								<a href="#"><i class="sp-linkedin"></i></a>
+								<a href="#"><i class="sp-google"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER-AREA END -->
+
+
+		<!-- all js here -->
+		<!-- jquery latest version -->
+        <script src="js/vendor/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+        <script src="js/bootstrap.min.js"></script>
+		<!-- jquery.nivo.slider js -->
+        <script src="lib/js/jquery.nivo.slider.js"></script>
+        <script src="lib/home.js"></script>
+		<!-- owl.carousel js -->
+        <script src="js/owl.carousel.min.js"></script>
+		<!-- meanmenu js -->
+        <script src="js/jquery.meanmenu.js"></script>
+		<!-- jquery-ui js -->
+        <script src="js/jquery-ui.min.js"></script>
+		<!-- lightbox.min js -->
+        <script src="js/lightbox.min.js"></script>
+		<!-- countdon.min js -->
+        <script src="js/countdon.min.js"></script>
+		<!-- wow js -->
+        <script src="js/wow.min.js"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
+		<!-- plugins js -->
+        <script src="js/plugins.js"></script>
+		<!-- main js -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
