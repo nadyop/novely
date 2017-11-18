@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = "http://".$_SERVER['SERVER_NAME']."/rajaongkir/";
+$config['base_url'] = "http://".$_SERVER['SERVER_NAME']."/novely/";
 
 /*
 |--------------------------------------------------------------------------
