@@ -11,5 +11,5 @@ Sebuah tugas akhir dari mata kuliah Sistem Terdistribusi 2017. Yang bersifat Res
 * Abdurrahman
 * Bahari Bastian L
 * Hilmawan Khibatul I
-* Mardiana
+* Mardiana Dwi M
 * Nadya Prabaningrum
