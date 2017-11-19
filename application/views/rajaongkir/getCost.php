@@ -48,7 +48,7 @@ if ($err) {
 ?>
 	 <div title="<?php echo strtoupper($data['rajaongkir']['results'][$k]['name']);?>" style="padding:10px">
 		 <table class="table table-striped">
-			 <tr>
+			<tr>
 				 <th>No.</th>
 				 <th>Jenis Layanan</th>
 				 <th>ETD</th>

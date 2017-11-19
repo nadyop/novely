@@ -41,6 +41,8 @@
 $route['default_controller'] = "login";
 $route['404_override'] = 'error';
 
+/*********** USER DEFINED ROUTES *******************/
+$route['gmaps'] = 'gmaps/userListing';
 
 /*********** USER DEFINED ROUTES *******************/
 
