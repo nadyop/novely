@@ -20,6 +20,11 @@
     		color:red;
     		font-weight: normal;
     	}
+		#map {
+			width: 100%;
+			height: 400px;
+			background-color: grey;
+      }
     </style>
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
@@ -98,13 +103,13 @@
             <li class="treeview">
               <a href="#" >
                 <i class="fa fa-plane"></i>
-                <span>New Task</span>
+                <span>Post in Twitter</span>
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>gmaps" >
                 <i class="fa fa-ticket"></i>
-                <span>My Tasks</span>
+                <span>Lokasi Pembeli</span>
               </a>
             </li>
             <?php
