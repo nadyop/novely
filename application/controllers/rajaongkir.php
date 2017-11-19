@@ -5,10 +5,13 @@ class Rajaongkir extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('cek_ongkir');
+		$this->load->view('header');
+		$this->load->view('checkout');
+		// $this->load->view('cek_ongkir');
+		$this->load->view('footer');
 	}
 
-	function getCity($province){		
+	function getCity($province){
 
 		$curl = curl_init();
 
@@ -37,12 +40,12 @@ class Rajaongkir extends CI_Controller {
 			$data = json_decode($response, true);
 		  //echo json_encode($k['rajaongkir']['results']);
 
-		  
+
 		  for ($j=0; $j < count($data['rajaongkir']['results']); $j++){
-		  
+
 
 		    echo "<option value='".$data['rajaongkir']['results'][$j]['city_id']."'>".$data['rajaongkir']['results'][$j]['city_name']."</option>";
-		  
+
 		  }
 		}
 	}
@@ -55,12 +58,12 @@ class Rajaongkir extends CI_Controller {
 		$courier = $this->input->get('courier');
 
 		$data = array('origin' => $origin,
-						'destination' => $destination, 
-						'berat' => $berat, 
-						'courier' => $courier 
+						'destination' => $destination,
+						'berat' => $berat,
+						'courier' => $courier
 
 		);
-		
+
 		$this->load->view('rajaongkir/getCost', $data);
 	}
 
