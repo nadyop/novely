@@ -1678,7 +1678,7 @@ select {
   padding-right: 0;
 }
 .footer-message-box input, .footer-message-box textarea {
-  background: #333 none repeat scroll 0 0;
+  background: #9D9D9D none repeat scroll 0 0;
   border: 0 none;
   color: #fff;
   font-size: 12px;
@@ -3255,10 +3255,10 @@ h3.widget-title-modal {
 }
 .coupon-info p.form-row-last {
 }
-.coupon-info p.form-row input[type="submit"]:hover, p.checkout-coupon input[type="submit"]:hover {
+.coupon-info p.form-row button[type="button"]:hover, p.checkout-coupon button[type="button"]:hover {
     background: #438DE8 none repeat scroll 0 0;
 }
-.coupon-info p.form-row input[type="checkbox"] {
+.coupon-info p.form-row button[type="checkbox"] {
     position: relative;
     top: 2px;
 }
@@ -3306,7 +3306,7 @@ p.checkout-coupon input[type="submit"] {
     text-transform: uppercase;
     width: 100%;
 }
-.coupon input[type="submit"], .coupon-info p.form-row input[type="submit"] {
+.coupon button[type="button"], .coupon-info p.form-row button[type="button"] {
   background: #252525 none repeat scroll 0 0;
   border: medium none;
   color: #fff;
@@ -3322,7 +3322,7 @@ p.checkout-coupon input[type="submit"] {
   transition: all 0.3s ease 0s;
 }
 .coupon input[type="submit"]:hover,
-.coupon-info p.form-row input[type="submit"]:hover,
+.coupon-info p.form-row button[type="button"]:hover,
 .comment-respond input[type="submit"]:hover {
   background: #438DE8  none repeat scroll 0 0;
 }
