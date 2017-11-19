@@ -64,20 +64,27 @@ CREATE TABLE `tbl_novel` (
 --
 
 INSERT INTO `tbl_novel` (`id_novel`, `gambar`, `nama_novel`, `pengarang`, `harga`) VALUES
-(1, 'hujan.jpg', 'hujan', 'tere liye', 57800),
-(2, '', 'rentang kisah', 'gita savitri', 61700),
-(3, '', 'after met you', 'dwitasaridwita', 63600),
-(4, '', 'anak rantau', 'a.fuadi', 72000),
-(5, '', 'filosofi kopi', 'dee lestari', 45900),
-(6, '', 'keluarga tak kasat mata', 'bonaventura genta', 47300),
-(7, '', 'radikus makankakus', 'raditya dika', 53500),
-(8, '', 'matahari', 'tere liye', 74800),
-(9, '', 'catatan juang', 'fiersa besari', 60000),
-(10, '', 'origin', 'dan brown', 160600),
-(11, '', 'My Devil Butler', 'queen nakey', 79600),
-(12, '', 'cold hearts', 'bels', 61600),
-(13, '', 'rushing', 'kammora', 63700),
-(14, '', 'ayah', 'andrea hirata', 50000);
+(1, 'hujan.jpg', 'Hujan', 'Tere Liye', 57800),
+(2, '', 'Rentang Kisah', 'Gita Savitri', 61700),
+(3, '', 'After Met You', 'Dwitasaridwita', 63600),
+(4, '', 'Anak Rantau', 'A.Fuadi', 72000),
+(5, '', 'Filosofi Kopi', 'Dee Lestari', 45900),
+(6, '', 'Keluarga Tak Kasat Mata', 'Bonaventura Genta', 47300),
+(7, '', 'Radikus Makankakus', 'Raditya Dika', 53500),
+(8, '', 'Matahari', 'Tere Liye', 74800),
+(9, '', 'Catatan Juang', 'Fiersa Besari', 60000),
+(10, '', 'Origin', 'Dan Brown', 160600),
+(11, '', 'My Devil Butler', 'Queen Nakey', 79600),
+(12, '', 'Cold Hearts', 'Bels', 61600),
+(13, '', 'Rushing', 'Kammora', 63700),
+(14, '', 'Ayah', 'Andrea Hirata', 50000),
+(15, '', 'Harry Potter #1: Harry Potter dan Batu Bertuah', 'J.K Rowling', 40000),
+(16, '', 'Harry Potter #2: CHAMBER OF SECRETS', 'J.K Rowling', 58000),
+(17, '', 'Harry Potter #3: Harry Potter dan Tawanan Azkaban', 'J.K Rowling', 55000),
+(18, '', 'Harry Potter #4: Harry Potter dan Piala Api', 'J.K Rowling', 85000),
+(19, '', 'Harry Potter #5: Harry Potter and the Order of the Phoenix', 'J.K Rowling', 130000),
+(20, '', 'Harry Potter #6: Harry Potter dan Pangeran Berdarah Campuran', 'J.K Rowling', 125000),
+(21, '', 'Harry Potter #7: Harry Potter dan Relikui Kematian', 'J.K Rowling', 200000);
 
 -- --------------------------------------------------------
 
