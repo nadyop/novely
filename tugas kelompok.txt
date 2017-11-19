@@ -1,0 +1,36 @@
+1. twitter
+	- fitur twitter untuk apa? ya sama pembahasannya kyk 5W+1H
+	- untuk marketing, (yg ngpost admin) jadi datanya dari database dan tiwtternya sebagai pemasaran
+	- jadi kyk posting informasi penjualan buku di twitter
+	- di halaman admin ditambahin menu post thread twitter
+
+2. raja ongkir
+	- di tampilan user
+	- workflow : user mengklik salah satu buku, menginputkan jumlah buku yang ingin dibeli, setelah itu klik OK
+	  masuk ke halaman rajaongkir
+	- user memasukkan lokasi tempat pengiriman buku, habis itu lokasi tujuan pengiriman dari user yang menginputkan, lokasi pengiriman / origin itu dari kita, berat itu sudah diambil dari inputan jumlah buku yang dibeli pembeli
+	  misal 1 buku 500gr, 2 buku 1000g. get berat buku dari inputan pembeli yang membeli buku dari penjual buku di toko buku
+	- pilih kurir, klik OK maka akan ditampilkan pembayaranmu, informasi transfer ke rekening
+
+3. gmaps
+	- di dashboard admin ada daftar lokasi pelanggan, di klik ada detail buku yang dibeli (dari sisi admin)
+
+Tampilan user :
+- town/city diganti provinsi, sub diganti kota, zip diganti kodepos
+- jumlah dimasukkan ke modal
+- modal yg ada di shop-list.html (klik buy muncul jumlah yang diinginkan)
+
+Menu admin :
+- post to twitter
+- data pembeli
+- gmaps (lokasi pembeli yg membeli)
+
+Konten post twitter (sisi admin) :
+- text isi post
+	*judul
+	*isi
+	*harga
+	*stock
+	*lokasi
+	*CP
+- foto buku novel
