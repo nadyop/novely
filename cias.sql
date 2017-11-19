@@ -47,6 +47,38 @@ INSERT INTO `tbl_items` (`itemId`, `itemHeader`, `itemSub`, `itemDesc`, `itemIma
 (1, 'jquery.validation.js', 'Contribution towards jquery.validation.js', 'jquery.validation.js is the client side javascript validation library authored by Jörn Zaefferer hosted on github for us and we are trying to contribute to it. Working on localization now', 'validation.png', 0, 1, '2015-09-02 00:00:00', NULL, NULL),
 (2, 'CodeIgniter User Management', 'Demo for user management system', 'This the demo of User Management System (Admin Panel) using CodeIgniter PHP MVC Framework and AdminLTE bootstrap theme. You can download the code from the repository or forked it to contribute. Usage and installation instructions are provided in ReadMe.MD', 'cias.png', 0, 1, '2015-09-02 00:00:00', NULL, NULL);
 
+--
+-- Struktur dari tabel `tbl_novel`
+--
+
+CREATE TABLE `tbl_novel` (
+  `id_novel` int(11) NOT NULL,
+  `gambar` varchar(50) NOT NULL,
+  `nama_novel` varchar(255) NOT NULL,
+  `pengarang` varchar(255) NOT NULL,
+  `harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_novel`
+--
+
+INSERT INTO `tbl_novel` (`id_novel`, `gambar`, `nama_novel`, `pengarang`, `harga`) VALUES
+(1, 'hujan.jpg', 'hujan', 'tere liye', 57800),
+(2, '', 'rentang kisah', 'gita savitri', 61700),
+(3, '', 'after met you', 'dwitasaridwita', 63600),
+(4, '', 'anak rantau', 'a.fuadi', 72000),
+(5, '', 'filosofi kopi', 'dee lestari', 45900),
+(6, '', 'keluarga tak kasat mata', 'bonaventura genta', 47300),
+(7, '', 'radikus makankakus', 'raditya dika', 53500),
+(8, '', 'matahari', 'tere liye', 74800),
+(9, '', 'catatan juang', 'fiersa besari', 60000),
+(10, '', 'origin', 'dan brown', 160600),
+(11, '', 'My Devil Butler', 'queen nakey', 79600),
+(12, '', 'cold hearts', 'bels', 61600),
+(13, '', 'rushing', 'kammora', 63700),
+(14, '', 'ayah', 'andrea hirata', 50000);
+
 -- --------------------------------------------------------
 
 --
