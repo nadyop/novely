@@ -5,7 +5,49 @@ class Rajaongkir extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('cek_ongkir');
+		$this->load->view('header');
+		$this->load->view('checkout');
+		// $this->load->view('cek_ongkir');
+		$this->load->view('footer');
+	}
+
+	function getCity($province){
+
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		  CURLOPT_URL => "http://api.rajaongkir.com/starter/city?province=$province",
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => "",
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 30,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => "GET",
+		  CURLOPT_HTTPHEADER => array(
+		    "key: 2118c2bba87bfb05327d431813c93c45"
+		  ),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+		  echo "cURL Error #:" . $err;
+		} else {
+		  //echo $response;
+			$data = json_decode($response, true);
+		  //echo json_encode($k['rajaongkir']['results']);
+
+
+		  for ($j=0; $j < count($data['rajaongkir']['results']); $j++){
+
+
+		    echo "<option value='".$data['rajaongkir']['results'][$j]['city_id']."'>".$data['rajaongkir']['results'][$j]['city_name']."</option>";
+
+		  }
+		}
 	}
 
 	function getCost()
