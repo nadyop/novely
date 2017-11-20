@@ -48,6 +48,25 @@ INSERT INTO `tbl_items` (`itemId`, `itemHeader`, `itemSub`, `itemDesc`, `itemIma
 (2, 'CodeIgniter User Management', 'Demo for user management system', 'This the demo of User Management System (Admin Panel) using CodeIgniter PHP MVC Framework and AdminLTE bootstrap theme. You can download the code from the repository or forked it to contribute. Usage and installation instructions are provided in ReadMe.MD', 'cias.png', 0, 1, '2015-09-02 00:00:00', NULL, NULL);
 
 --
+-- Struktur dari tabel `tbl_kurir`
+--
+
+CREATE TABLE `tbl_kurir` (
+  `id_kurir` int(11) NOT NULL,
+  `nama_kurir` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_kurir`
+--
+
+INSERT INTO `tbl_kurir` (`id_kurir`, `nama_kurir`) VALUES
+(1, 'JNE_OK'),
+(2, 'JNE_YES'),
+(3, 'JNE_REGULER');
+
+-- --------------------------------------------------------
+--
 -- Struktur dari tabel `tbl_novel`
 --
 
@@ -88,6 +107,33 @@ INSERT INTO `tbl_novel` (`id_novel`, `gambar`, `nama_novel`, `pengarang`, `harga
 
 -- --------------------------------------------------------
 
+--
+-- Struktur dari tabel `tbl_pembeli`
+--
+
+CREATE TABLE `tbl_pembeli` (
+  `id_pembeli` int(11) NOT NULL,
+  `nama_pembeli` varchar(255) NOT NULL,
+  `email_pembeli` varchar(50) NOT NULL,
+  `telepon_pembeli` char(12) NOT NULL,
+  `alamat_pembeli` varchar(255) NOT NULL,
+  `provinsi` varchar(50) NOT NULL,
+  `kota` varchar(255) NOT NULL,
+  `kode_pos` char(10) NOT NULL,
+  `kurir` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_pembeli`
+--
+
+INSERT INTO `tbl_pembeli` (`id_pembeli`, `nama_pembeli`, `email_pembeli`, `telepon_pembeli`, `alamat_pembeli`, `provinsi`, `kota`, `kode_pos`, `kurir`, `created_at`, `updated_at`) VALUES
+(1, 'Diana', 'mardiana.dwi.m@mail.ugm.ac.id', '081231992632', 'Jl.C.Simanjuntak GkV/79A', 'D.I.Yogyakarta', 'Yogyakarta', '55223', '1', '2017-11-20 03:57:13', '0000-00-00 00:00:00'),
+(2, 'Nadya', 'nadyaprabaningrum@gmail.com', '085712939029', 'Jalan Soragan', 'DIY', 'Bantul', '55182', '2', '2017-11-20 03:59:58', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
 --
 -- Table structure for table `tbl_reset_password`
 --
