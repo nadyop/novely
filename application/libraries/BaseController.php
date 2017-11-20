@@ -147,4 +147,5 @@ class BaseController extends CI_Controller {
 				"segment" => $segment
 		);
 	}
+	
 }
