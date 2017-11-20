@@ -17,7 +17,7 @@ class Twitter extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model('twitter_model');
         $this->isLoggedIn();   
     }
     
@@ -34,7 +34,7 @@ class Twitter extends BaseController
     /**
      * This function is used to add new user to the system
      */
-    function addNewUser()
+    function postTwitter()
     {
         if($this->isAdmin() == TRUE)
         {
@@ -44,12 +44,8 @@ class Twitter extends BaseController
         {
             $this->load->library('form_validation');
             
-            $this->form_validation->set_rules('fname','Full Name','trim|required|max_length[128]|xss_clean');
-            $this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean|max_length[128]');
-            $this->form_validation->set_rules('password','Password','required|max_length[20]');
-            $this->form_validation->set_rules('cpassword','Confirm Password','trim|required|matches[password]|max_length[20]');
-            $this->form_validation->set_rules('role','Role','trim|required|numeric');
-            $this->form_validation->set_rules('mobile','Mobile Number','required|min_length[10]|xss_clean');
+            $this->form_validation->set_rules('title','required|max_length[128]|xss_clean');
+            $this->form_validation->set_rules('isi','required|max_length[128]|xss_clean');
             
             if($this->form_validation->run() == FALSE)
             {
@@ -57,104 +53,42 @@ class Twitter extends BaseController
             }
             else
             {
-                $name = ucwords(strtolower($this->input->post('fname')));
-                $email = $this->input->post('email');
-                $password = $this->input->post('password');
-                $roleId = $this->input->post('role');
-                $mobile = $this->input->post('mobile');
+                $judul = $this->input->post('judul');
+                $isi = $this->input->post('isi');
+				
+                $postInfo = array('judul'=>$judul, 'isi'=>$isi);
                 
-                $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
-                                    'mobile'=>$mobile, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
-                
-                $this->load->model('user_model');
-                $result = $this->user_model->addNewUser($userInfo);
+                $this->load->model('twitter_model');
+                $result = $this->twitter_model->addNewPost($postInfo);
                 
                 if($result > 0)
                 {
-                    $this->session->set_flashdata('success', 'New User created successfully');
+                    $this->session->set_flashdata('success', 'New Post created successfully');
                 }
                 else
                 {
-                    $this->session->set_flashdata('error', 'User creation failed');
+                    $this->session->set_flashdata('error', 'Post creation failed');
                 }
                 
-                redirect('addNew');
+                redirect('twitter');
             }
         }
     }
-
-    /**
-     * This function is used to delete the user using userId
-     * @return boolean $result : TRUE / FALSE
+	
+	    /**
+     * This function is used to load the add new form
      */
-    function deleteUser()
+    function addNew()
     {
         if($this->isAdmin() == TRUE)
         {
-            echo(json_encode(array('status'=>'access')));
+            $this->loadThis();
         }
         else
         {
-            $userId = $this->input->post('userId');
-            $userInfo = array('isDeleted'=>1,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
-            
-            $result = $this->user_model->deleteUser($userId, $userInfo);
-            
-            if ($result > 0) { echo(json_encode(array('status'=>TRUE))); }
-            else { echo(json_encode(array('status'=>FALSE))); }
-        }
-    }
-    
-    /**
-     * This function is used to load the change password screen
-     */
-    function loadChangePass()
-    {
-        $this->global['pageTitle'] = 'CodeInsect : Change Password';
-        
-        $this->loadViews("changePassword", $this->global, NULL, NULL);
-    }
-    
-    
-    /**
-     * This function is used to change the password of the user
-     */
-    function changePassword()
-    {
-        $this->load->library('form_validation');
-        
-        $this->form_validation->set_rules('oldPassword','Old password','required|max_length[20]');
-        $this->form_validation->set_rules('newPassword','New password','required|max_length[20]');
-        $this->form_validation->set_rules('cNewPassword','Confirm new password','required|matches[newPassword]|max_length[20]');
-        
-        if($this->form_validation->run() == FALSE)
-        {
-            $this->loadChangePass();
-        }
-        else
-        {
-            $oldPassword = $this->input->post('oldPassword');
-            $newPassword = $this->input->post('newPassword');
-            
-            $resultPas = $this->user_model->matchOldPassword($this->vendorId, $oldPassword);
-            
-            if(empty($resultPas))
-            {
-                $this->session->set_flashdata('nomatch', 'Your old password not correct');
-                redirect('loadChangePass');
-            }
-            else
-            {
-                $usersData = array('password'=>getHashedPassword($newPassword), 'updatedBy'=>$this->vendorId,
-                                'updatedDtm'=>date('Y-m-d H:i:s'));
-                
-                $result = $this->user_model->changePassword($this->vendorId, $usersData);
-                
-                if($result > 0) { $this->session->set_flashdata('success', 'Password updation successful'); }
-                else { $this->session->set_flashdata('error', 'Password updation failed'); }
-                
-                redirect('loadChangePass');
-            }
+            $this->global['pageTitle'] = 'CodeInsect : Add New Post';
+
+            $this->loadViews("twitter", $this->global, NULL, NULL);
         }
     }
 

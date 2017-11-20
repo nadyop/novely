@@ -11,15 +11,15 @@
 						</div><!-- /.box-header -->
 						
 						<!-- form start -->
-						<form role="form">
+						<form role="form" method="POST" action="<?php echo base_url();?>postTwitter">
 							<div class="box-body">
 								<div class="form-group">
-									<label for="exampleInputEmail1">Judul</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+									<label>Judul</label>
+									<input type="text" class="form-control" id="judul" name="judul" placeholder="Judul Post">
 								</div>
 								<div class="form-group">
 									<label>Isi</label>
-									<textarea class="form-control" rows="3" placeholder="Enter ..." ></textarea>
+									<textarea class="form-control" rows="5" id="isi" name="isi" placeholder="Tulis konten" ></textarea>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputFile">Gambar</label>

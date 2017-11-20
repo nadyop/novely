@@ -46,6 +46,7 @@ $route['gmaps'] = 'gmaps/userListing';
 
 /*********** TWITTER DEFINED ROUTES *******************/
 $route['twitter'] = 'twitter/index';
+$route['postTwitter'] = 'twitter/postTwitter';
 
 /*********** USER DEFINED ROUTES *******************/
 
