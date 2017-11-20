@@ -45,7 +45,7 @@ $route['404_override'] = 'error';
 $route['gmaps'] = 'gmaps/userListing';
 
 /*********** TWITTER DEFINED ROUTES *******************/
-$route['twitter'] = 'twitter/userListing';
+$route['twitter'] = 'twitter/index';
 
 /*********** USER DEFINED ROUTES *******************/
 

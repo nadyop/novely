@@ -27,8 +27,8 @@ class Twitter extends BaseController
     public function index()
     {
         $this->global['pageTitle'] = 'CodeInsect : Dashboard';
-        
-        $this->loadViews("dashboard", $this->global, NULL , NULL);
+
+        $this->loadViews("twitter", $this->global, NULL , NULL);
     }
     
     /**
