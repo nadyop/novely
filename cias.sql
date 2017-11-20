@@ -111,6 +111,29 @@ INSERT INTO `tbl_novel` (`id_novel`, `gambar`, `nama_novel`, `pengarang`, `harga
 -- Struktur dari tabel `tbl_pembeli`
 --
 
+--
+-- Struktur dari tabel `tbl_post`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_post` (
+`id_post` int(11) NOT NULL,
+  `judul` varchar(100) NOT NULL,
+  `isi` varchar(255) NOT NULL,
+  `gambar` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_post`
+--
+
+INSERT INTO `tbl_post` (`id_post`, `judul`, `isi`, `gambar`, `created_at`, `update_at`) VALUES
+(1, 'Keluarga Tak Kasat Mata', 'Pengarang : Genta \\n Harga Rp 55.000,-', '', '2017-11-20 10:27:28', '0000-00-00 00:00:00'),
+(2, 'Filosofi Kopi', 'Pengarang : DEE Lestari\r\nHarga : Rp 46.000,-', '', '2017-11-20 10:28:32', '0000-00-00 00:00:00');
+
+-- ---------------------------------------------------------
+
 CREATE TABLE `tbl_pembeli` (
   `id_pembeli` int(11) NOT NULL,
   `nama_pembeli` varchar(255) NOT NULL,
