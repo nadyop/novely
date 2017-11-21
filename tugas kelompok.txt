@@ -15,6 +15,12 @@
 3. gmaps
 	- di dashboard admin ada daftar lokasi pelanggan, di klik ada detail buku yang dibeli (dari sisi admin)
 
+4. midtrans (payment gateway)
+	- dari halaman checkout yg ngisi data pribadi sama ngcek ongkir, terus ada pilihan transfer di klik bank yg diinginkan
+
+5. sms gateway
+	- sebagai konfirmasi pembayaran
+
 Tampilan user :
 - town/city diganti provinsi, sub diganti kota, zip diganti kodepos
 - jumlah dimasukkan ke modal
