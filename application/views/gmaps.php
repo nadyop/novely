@@ -65,67 +65,77 @@
 	</div>
 	<script>
 		var map;
-		
-		function initMap() {
-        var uluru = {lat: -7.7697984, lng: 110.3758918};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h2 id="firstHeading" class="firstHeading">Hujan - Tere Liye</h2>'+
-            '<div id="bodyContent">'+
-            '<p><b>Nama Pembeli </b>: Hilmawan <br>' +
-            '<b>Lokasi </b>: Yogyakarta <br>' +
-            '<b>Jumlah </b>: 100 <br>' +
-            '<b>Courier </b>: JNE <br>' +
-            '<b>Tanggal </b>: 19-11-2017 <br>' +
-            '</div>'+
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-			content: contentString
-        });
-
-        // var marker = new google.maps.Marker({
-			// position: uluru,
-			// map: map,
-			// title: 'Yogyakarta'
-        // });
-		
-		var features = [
-			{ position: new google.maps.LatLng(-7.774531, 110.374573) }, //{ position: new google.maps.LatLng(-7.773874, 110.375200) },
-			<?php
-				if(!empty($userRecords))
-				{
-					foreach($userRecords as $record)
-					{
-						echo '{ position: new google.maps.LatLng('.$record->longitude.', '.$record->latittude.') },';
-					}
-				}
-			?>
-        ];
-
-        for (var i = 0, feature; feature = features[i]; i++) {
-			addMarker(feature);
-        }
-		
-		function addMarker(feature) {
-			var marker = new google.maps.Marker({
-            position: feature.position,
-            map: map
-			});
 			
-			marker.addListener('click', function() {
-			  infowindow.open(map, marker);
-			});		
+		function initMap() {
+			var uluru = {lat: -0.531462, lng: 110.917004};
+			var map = new google.maps.Map(document.getElementById('map'), {
+			  zoom: 5,
+			  center: uluru
+			});
+
+			var contentString = '<div id="content">'+
+				'<div id="siteNotice">'+
+				'</div>'+
+				'<center><img src="<?php echo base_url();?>assets/images/logo.png" style="max-width: 190px;"></center>'+
+				'</div>';
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+
+			// var marker = new google.maps.Marker({
+				// position: uluru,
+				// map: map,
+				// title: 'Yogyakarta'
+			// });
+			
+			var features = [
+				{ 	
+					position: new google.maps.LatLng(-7.774531, 110.374573)
+				}, //{ position: new google.maps.LatLng(-7.773874, 110.375200) },
+				<?php
+					if(!empty($userRecords))
+					{
+						foreach($userRecords as $record)
+						{
+				?>
+					{ 
+						position: new google.maps.LatLng(<?php echo $record->longitude; ?>, <?php echo $record->latittude; ?>)
+					},
+				<?php	
+						}
+					}
+				?>
+			];
+			
+			for (var i = 0, feature; feature = features[i]; i++) {
+				addMarker(feature);
+			}
+			
+			// for (var i = 0, content; content = contents[i]; i++) {
+				// addContent(content);
+			// }
+			
+			// function addContent(content) {
+				// var infowindow = new google.maps.InfoWindow({
+					// content: content.contentString
+				// });
+			// }
+			
+			function addMarker(feature) {
+				var marker = new google.maps.Marker({
+					position: feature.position,
+					map: map
+				});	
+				
+				marker.addListener('click', function() {
+					infowindow.open(map, marker);
+				});	
+			}
+			
 		}
-	}
     </script>
-    </script>
+    
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJG3_3_IixlWYdFd2bH4gfI0CNbW93IrU&callback=initMap"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/common.js" charset="utf-8"></script>
 	<script type="text/javascript">
