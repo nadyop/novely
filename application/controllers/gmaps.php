@@ -17,7 +17,7 @@ class Gmaps extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model('gmaps_model');
         $this->isLoggedIn();   
     }
     
@@ -42,20 +42,22 @@ class Gmaps extends BaseController
         }
         else
         {
-            $this->load->model('user_model');
+            $this->load->model('gmaps_model');
         
             $searchText = $this->input->post('searchText');
             $data['searchText'] = $searchText;
             
             $this->load->library('pagination');
             
-            $count = $this->user_model->userListingCount($searchText);
+            $count = $this->gmaps_model->userListingCount($searchText);
 
-			$returns = $this->paginationCompress ( "userListing/", $count, 5 );
+			$returns = $this->paginationCompress ( "userListing/", $count, 20 );
             
-            $data['userRecords'] = $this->user_model->userListing($searchText, $returns["page"], $returns["segment"]);
+            $data['userRecords'] = $this->gmaps_model->userListing($searchText, $returns["page"], $returns["segment"]);
             
             $this->global['pageTitle'] = 'CodeInsect : Gmaps';
+			
+			$data['gmapsRecords'] = $this->gmaps_model->gmapsListing();
             
             $this->loadViews("gmaps", $this->global, $data, NULL);
         }
@@ -72,8 +74,8 @@ class Gmaps extends BaseController
         }
         else
         {
-            $this->load->model('user_model');
-            $data['roles'] = $this->user_model->getUserRoles();
+            $this->load->model('gmaps_model');
+            $data['roles'] = $this->gmaps_model->getUserRoles();
             
             $this->global['pageTitle'] = 'CodeInsect : Add New User';
 
@@ -90,9 +92,9 @@ class Gmaps extends BaseController
         $email = $this->input->post("email");
 
         if(empty($userId)){
-            $result = $this->user_model->checkEmailExists($email);
+            $result = $this->gmaps_model->checkEmailExists($email);
         } else {
-            $result = $this->user_model->checkEmailExists($email, $userId);
+            $result = $this->gmaps_model->checkEmailExists($email, $userId);
         }
 
         if(empty($result)){ echo("true"); }
@@ -134,8 +136,8 @@ class Gmaps extends BaseController
                 $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
                                     'mobile'=>$mobile, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
                 
-                $this->load->model('user_model');
-                $result = $this->user_model->addNewUser($userInfo);
+                $this->load->model('gmaps_model');
+                $result = $this->gmaps_model->addNewUser($userInfo);
                 
                 if($result > 0)
                 {
@@ -169,8 +171,8 @@ class Gmaps extends BaseController
                 redirect('userListing');
             }
             
-            $data['roles'] = $this->user_model->getUserRoles();
-            $data['userInfo'] = $this->user_model->getUserInfo($userId);
+            $data['roles'] = $this->gmaps_model->getUserRoles();
+            $data['userInfo'] = $this->gmaps_model->getUserInfo($userId);
             
             $this->global['pageTitle'] = 'CodeInsect : Edit User';
             
@@ -227,7 +229,7 @@ class Gmaps extends BaseController
                         'updatedDtm'=>date('Y-m-d H:i:s'));
                 }
                 
-                $result = $this->user_model->editUser($userInfo, $userId);
+                $result = $this->gmaps_model->editUser($userInfo, $userId);
                 
                 if($result == true)
                 {
@@ -259,7 +261,7 @@ class Gmaps extends BaseController
             $userId = $this->input->post('userId');
             $userInfo = array('isDeleted'=>1,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
             
-            $result = $this->user_model->deleteUser($userId, $userInfo);
+            $result = $this->gmaps_model->deleteUser($userId, $userInfo);
             
             if ($result > 0) { echo(json_encode(array('status'=>TRUE))); }
             else { echo(json_encode(array('status'=>FALSE))); }
@@ -297,7 +299,7 @@ class Gmaps extends BaseController
             $oldPassword = $this->input->post('oldPassword');
             $newPassword = $this->input->post('newPassword');
             
-            $resultPas = $this->user_model->matchOldPassword($this->vendorId, $oldPassword);
+            $resultPas = $this->gmaps_model->matchOldPassword($this->vendorId, $oldPassword);
             
             if(empty($resultPas))
             {
@@ -309,7 +311,7 @@ class Gmaps extends BaseController
                 $usersData = array('password'=>getHashedPassword($newPassword), 'updatedBy'=>$this->vendorId,
                                 'updatedDtm'=>date('Y-m-d H:i:s'));
                 
-                $result = $this->user_model->changePassword($this->vendorId, $usersData);
+                $result = $this->gmaps_model->changePassword($this->vendorId, $usersData);
                 
                 if($result > 0) { $this->session->set_flashdata('success', 'Password updation successful'); }
                 else { $this->session->set_flashdata('error', 'Password updation failed'); }
